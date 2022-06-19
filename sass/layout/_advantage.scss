@@ -9,10 +9,10 @@
 .advantage-list-item {
     width: 270px;
     min-height: 101px;
-}
 
-.advantage-list-item:not(:nth-child(4n)) {
-    margin-right: 30px;
+    &:not(:nth-child(4n)) {
+        margin-right: 30px;
+    }
 }
 
 .advantage-item {
@@ -28,12 +28,6 @@
 
 .advantage-header {
     margin-bottom: 10px;
-
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.14;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
 }
 
 .advantage-text {

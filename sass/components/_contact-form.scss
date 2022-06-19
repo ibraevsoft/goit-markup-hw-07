@@ -37,11 +37,11 @@
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.contact-form-input:focus {
-    outline: none;
-    border-color: var(--brand-color);
+    &:focus {
+        outline: none;
+        border-color: var(--brand-color);
+    }
 }
 
 .contact-form-icon {
@@ -53,11 +53,13 @@
     height: 18px;
     fill: var(--accent-color);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .contact-form-input:focus+& {
+        fill: var(--brand-color);
+    }
 }
 
-.contact-form-input:focus+.contact-form-icon {
-    fill: var(--brand-color);
-}
+
 
 .contact-form-message {
     display: block;
@@ -69,11 +71,11 @@
     border-radius: 4px;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
         fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.contact-form-message:focus {
-    outline: none;
-    border-color: var(--brand-color);
+    &:focus {
+        outline: none;
+        border-color: var(--brand-color);
+    }
 }
 
 .contact-form-checkbox-label {
@@ -86,6 +88,32 @@
     line-height: 1.71;
     letter-spacing: 0.03em;
     color: var(--text-color);
+
+    &::before {
+        display: block;
+        width: 16px;
+        height: 15px;
+        margin-left: 14px;
+        margin-right: 7px;
+        border: 1px solid var(--accent-color);
+        border-radius: 2px;
+        cursor: pointer;
+        content: '';
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+            background-image 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+        .contact-form-checkbox:checked+& {
+            background-color: var(--brand-color);
+            background-image: url(../images/checkmark.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 0;
+        }
+
+        .contact-form-checkbox:focus+& {
+            border: 1px solid var(--brand-color);
+        }
+    }
 }
 
 .contact-form-checkbox-policy-span {
@@ -106,39 +134,14 @@
     color: var(--brand-color);
 }
 
-.contact-form-checkbox-label::before {
-    display: block;
-    width: 16px;
-    height: 15px;
-    margin-left: 14px;
-    margin-right: 7px;
-    border: 1px solid var(--accent-color);
-    border-radius: 2px;
-    cursor: pointer;
-    content: '';
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-        background-image 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.contact-form-checkbox:checked+.contact-form-checkbox-label::before {
-    background-color: var(--brand-color);
-    background-image: url(../images/checkmark.svg);
-    background-position: center;
-    background-repeat: no-repeat;
-    border: 0;
-}
-
-.contact-form-checkbox:focus+.contact-form-checkbox-label::before {
-    border: 1px solid var(--brand-color);
-}
-
 .contact-form-btn {
     align-self: center;
 
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    }
 }
 
-.contact-form-btn:hover,
-.contact-form-btn:focus {
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-}
