@@ -1,19 +1,19 @@
-.services-list {
+.services__list {
     display: flex;
     flex-wrap: wrap;
 }
 
-.services-list-container {
+.services__item:not(:nth-child(3n)) {
+    margin-right: 30px;
+}
+
+.services__block {
     position: relative;
     width: 370;
     left: 294;
 }
 
-.service-item:not(:nth-child(3n)) {
-    margin-right: 30px;
-}
-
-.services-header {
+.services__block-header {
     position: absolute;
     bottom: 0;
     left: 0;

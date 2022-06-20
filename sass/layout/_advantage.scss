@@ -2,11 +2,11 @@
     padding-top: 94px;
 }
 
-.advantage-list {
+.advantage__list {
     display: flex;
 }
 
-.advantage-list-item {
+.advantage__item {
     width: 270px;
     min-height: 101px;
 
@@ -15,7 +15,7 @@
     }
 }
 
-.advantage-item {
+.advantage__item-block {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,11 +26,11 @@
     margin-bottom: 30px;
 }
 
-.advantage-header {
+.advantage__header {
     margin-bottom: 10px;
 }
 
-.advantage-text {
+.advantage__text {
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
